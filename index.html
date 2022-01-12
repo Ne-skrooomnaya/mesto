@@ -3,19 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/style.css" />
+  <link rel="stylesheet" href="./pages/index.css" />
   <title>Место</title>
 </head>
 <body class="body">
   <div class="page">
     <header class="header">
-      <img class="header__logo" src="./images/Vector.svg" alt="лого">
+      <img class="header__logo" src="./images/mesto.svg" alt="лого">
     </header>
     <main class="content">
-
+      <section class="profile">
+        <div class="avatar">
+          <img class="avatar__image" src="./images/avatar.jpg" alt="аватар">
+        </div>
+        <div class="profile__info">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <p class="profile__hobby">Исследователь океана</p>
+            <button type="button" class="profile__edit_button"></button>
+        </div>
+          <button type="button" class="profile__add_button"></button>
+      </section>
+      <section class="elements">
+        <ul class="elements__grid">
+          <li class="element">
+            <img class="element__image" src="./images/1karachaevsk.jpg" alt="Место">
+            <div class="element__container">
+              <h2 class="element__title">Карачаевск</h2>
+              <button class="element__like"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img class="element__image" src="./images/2gora.png" alt="Место">
+            <div class="element__container">
+              <h2 class="element__title">Гора Эльбрус</h2>
+              <button class="element__like"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img class="element__image" src="./images/3dombai.png" alt="Место">
+            <div class="element__container">
+              <h2 class="element__title">Домбай</h2>
+              <button class="element__like"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img class="element__image" src="./images/4gora.png" alt="Место">
+            <div class="element__container">
+              <h2 class="element__title">Гора Эльбрус</h2>
+              <button class="element__like"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img class="element__image" src="./images/5dombai.png" alt="Место">
+            <div class="element__container">
+              <h2 class="element__title">Домбай</h2>
+              <button class="element__like"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img class="element__image" src="./images/6karachaevsk.png" alt="Место">
+            <div class="element__container">
+              <h2 class="element__title">Карачаево-Черкессия</h2>
+              <button class="element__like"></button>
+            </div>
+          </li>
+        </ul>
+      </section>
     </main>
     <footer class="footer">
-
+      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
+    <section class="popup">
+      <div class="popup__container">
+        <button type="button" class="popup__close"></button>
+        <form class="popup__form" name="form_profile">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input type="text" class="popup__input popup__text_name" name="profile-name" id="popup__name" placeholder="Имя">
+          <input type="text" class="popup__input popup__text_hobby" name="profile-hobby" id="popup__hobby" placeholder="О себе">
+          <button type="submit" class="popup__submit_button">Сохранить</button>
+        </form>
+      </div>
+    </section>
+    <script src="./scripts/index.js"></script>
   </div>
 </body>
+</html>

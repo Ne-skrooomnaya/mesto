@@ -1,0 +1,18 @@
+.profile__hobby {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    order: 2;
+}
+
+@media screen and (max-width: 767px) {
+    .profile__hobby {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
