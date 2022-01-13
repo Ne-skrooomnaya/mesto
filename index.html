@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ангелина Файзуллина" />
   <link rel="stylesheet" href="./pages/index.css" />
   <title>Место</title>
 </head>
@@ -26,46 +27,58 @@
       <section class="elements">
         <ul class="elements__grid">
           <li class="element">
-            <img class="element__image" src="./images/1karachaevsk.jpg" alt="Место">
             <div class="element__container">
-              <h2 class="element__title">Карачаевск</h2>
-              <button class="element__like"></button>
+              <img class="element__image" src="./images/1karachaevsk.jpg" alt="Место">
+              <div class="element__bottom">
+                <h2 class="element__title">Карачаевск</h2>
+                <button type="button" class="element__like"></button>
+              </div>
             </div>
           </li>
           <li class="element">
-            <img class="element__image" src="./images/2gora.png" alt="Место">
             <div class="element__container">
-              <h2 class="element__title">Гора Эльбрус</h2>
-              <button class="element__like"></button>
+              <img class="element__image" src="./images/2gora.png" alt="Место">
+              <div class="element__bottom">
+                <h2 class="element__title">Гора Эльбрус</h2>
+                <button class="element__like"></button>
+              </div>
             </div>
           </li>
           <li class="element">
-            <img class="element__image" src="./images/3dombai.png" alt="Место">
             <div class="element__container">
-              <h2 class="element__title">Домбай</h2>
-              <button class="element__like"></button>
+              <img class="element__image" src="./images/3dombai.png" alt="Место">
+              <div class="element__bottom">
+                <h2 class="element__title">Домбай</h2>
+                <button class="element__like"></button>
+              </div>
             </div>
           </li>
           <li class="element">
-            <img class="element__image" src="./images/4gora.png" alt="Место">
             <div class="element__container">
-              <h2 class="element__title">Гора Эльбрус</h2>
-              <button class="element__like"></button>
+              <img class="element__image" src="./images/4gora.png" alt="Место">
+              <div class="element__bottom">
+                <h2 class="element__title">Гора Эльбрус</h2>
+                <button class="element__like"></button>
+              </div>
             </div>
           </li>
           <li class="element">
-            <img class="element__image" src="./images/5dombai.png" alt="Место">
             <div class="element__container">
-              <h2 class="element__title">Домбай</h2>
-              <button class="element__like"></button>
+              <img class="element__image" src="./images/5dombai.png" alt="Место">
+              <div class="element__bottom">
+                <h2 class="element__title">Домбай</h2>
+                <button class="element__like"></button>
+              </div>
             </div>
           </li>
           <li class="element">
-            <img class="element__image" src="./images/6karachaevsk.png" alt="Место">
             <div class="element__container">
-              <h2 class="element__title">Карачаево-Черкессия</h2>
-              <button class="element__like"></button>
-            </div>
+              <img class="element__image" src="./images/6karachaevsk.png" alt="Место">
+              <div class="element__bottom">  
+                <h2 class="element__title">Карачаево-Черкессия</h2>
+                <button class="element__like"></button>
+              </div>
+              </div>
           </li>
         </ul>
       </section>
@@ -78,13 +91,13 @@
         <button type="button" class="popup__close"></button>
         <form class="popup__form" name="form_profile">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" class="popup__input popup__text-name" name="profile-name" id="popup__name" placeholder="Имя">
-          <input type="text" class="popup__input popup__text-hobby" name="profile-hobby" id="popup__hobby" placeholder="О себе">
+          <input type="text" class="popup__input" name="profile-name" id="popup__name" placeholder="Имя">
+          <input type="text" class="popup__input" name="profile-hobby" id="popup__hobby" placeholder="О себе">
           <button type="submit" class="popup__submit-button">Сохранить</button>
         </form>
       </div>
     </section>
-    <script src="./scripts/index.js"></script>
   </div>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>

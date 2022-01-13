@@ -5,14 +5,20 @@
     margin: 0;
     padding: 0;
     order: 2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 @media screen and (max-width: 767px) {
     .profile__hobby {
-        font-weight: normal;
         font-size: 14px;
         line-height: 17px;
         text-align: center;
         margin: 0 auto;
+        align-items: flex-start;
     }
 }

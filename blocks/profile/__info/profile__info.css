@@ -4,7 +4,6 @@
     grid-template-rows: repeat(2, 1fr);
     column-gap: 18px;
     row-gap: 10px;
-    min-height: 73px;
     margin-top: 22px;
     margin-bottom: 25px;
 }
@@ -13,7 +12,6 @@
     .profile__info {
         grid-template-columns: 189px 1fr;
         row-gap: 14px;
-        min-height: 54px;
         margin: 0 auto;
         margin-top: 22px;
         margin-bottom: 36px;

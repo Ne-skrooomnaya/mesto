@@ -11,8 +11,8 @@ const inputHobby = document.querySelector('#popup__hobby');
 
 function openPopup() {
     popupForm.classList.add('popup_opened');
-    inputName.value = userName.textContent;
-    inputHobby.value = userHobby.textContent;
+    inputName.value = profileName.textContent;
+    inputHobby.value = profileHobby.textContent;
 }
 
 function closePopup() {
@@ -21,8 +21,8 @@ function closePopup() {
 
 function formSubmitHandler (evt) {
     evt.preventDefault();
-    userName.textContent = inputName.value;
-    userHobby.textContent = inputHobby.value;
+    profileName.textContent = inputName.value;
+    profileHobby.textContent = inputHobby.value;
     closePopup();
 }
 
