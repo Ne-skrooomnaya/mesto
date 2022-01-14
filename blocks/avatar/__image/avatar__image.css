@@ -8,9 +8,16 @@
     margin-right: 30px;
 }
 
+@media screen and (max-width: 1023px) {
+    .avatar__image {
+        margin-left: 27px;
+    }
+}
+
 @media screen and (max-width: 767px) {
     .avatar__image {
         text-align: center;
         margin-right: 0px;
+        margin-left: 0px;
     }
 }
