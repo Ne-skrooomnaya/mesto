@@ -1,4 +1,12 @@
-.popup {
+.popup {  
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s linear;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     right: 0;
@@ -7,5 +15,4 @@
     background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
-    display: none;
 }
