@@ -25,24 +25,23 @@ const initialCards = [
   }
 ];
 
-
 const editButton = document.querySelector('.profile__edit-button');
 const profileName = document.querySelector('.profile__name');
 const profileHobby = document.querySelector('.profile__hobby');
-const popupFormEdit = document.querySelector('.popup__button-edit');
+const popupFormEdit = document.querySelector('.popup-edit');
 const closeButtonEdit = document.querySelector('.popup__close-edit');
 const inputFormEdit = document.querySelector('.popup__form-edit');
 const inputName = document.querySelector('#popup__name');
 const inputHobby = document.querySelector('#popup__hobby');
 
 const addButton = document.querySelector(".profile__add-button");
-const popupFormAdd = document.querySelector('.popup__button-add');
+const popupFormAdd = document.querySelector('.popup-add');
 const closeButtonAdd = document.querySelector('.popup__close-add');
 const inputFormAdd = document.querySelector('.popup__form-add');
 const inputText = document.querySelector('#popup__text');
 const inputPhoto = document.querySelector('#popup__photo');
 
-const popupFormPhoto = document.querySelector('.popup__photo');
+const popupFormPhoto = document.querySelector('.popup-photo');
 const closeButtonPhoto = popupFormPhoto.querySelector('.popup__close');
 
 const elementTemplate = document.querySelector('#template-element').content;
