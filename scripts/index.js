@@ -91,7 +91,9 @@ function deleteCard (delElement) {
 
 function popupPhoto (popupElement) {
   popupElement.querySelector('.element__image').addEventListener('click', function() {
-  popupFormPhoto.querySelector('.popup__image').src = popupElement.querySelector('.element__image').src;
+  const image = popupFormPhoto.querySelector('.popup__image');
+  image.src = popupElement.querySelector('.element__image').src;
+  image.alt = popupElement.querySelector('.element__image').alt;
   popupFormPhoto.querySelector('.popup__photo-text').textContent = popupElement.querySelector('.element__title').textContent;
   openPopup (popupFormPhoto);
   });
