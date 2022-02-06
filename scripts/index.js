@@ -1,4 +1,4 @@
-const editButton = document.querySelector('.profile__edit-button');
+const buttonEdit = document.querySelector('.profile__edit-button');
 const profileName = document.querySelector('.profile__name');
 const profileHobby = document.querySelector('.profile__hobby');
 
@@ -8,7 +8,7 @@ const inputFormEdit = popupFormEdit.querySelector('.popup__form-edit');
 const inputName = popupFormEdit.querySelector('#popup__name');
 const inputHobby = popupFormEdit.querySelector('#popup__hobby');
 
-const addButton = document.querySelector(".profile__add-button");
+const buttonAdd = document.querySelector(".profile__add-button");
 const popupFormAdd = document.querySelector('.popup-add');
 const closeButtonAdd = popupFormAdd.querySelector('.popup__close-add');
 const inputFormAdd = popupFormAdd.querySelector('.popup__form-add');
@@ -30,12 +30,11 @@ const closeMausOverlay = (evt) => {
 }
 
 const closeKeybordEscape = (evt) => {
-	const item = document.querySelector('.popup_opened');
 	if(evt.key === 'Escape') {
 		closePopup(item);
 	}
+  const item = document.querySelector('.popup_opened');
 }
-
 
 function openPopup(formName) {
   formName.classList.add('popup_opened');
@@ -55,7 +54,6 @@ function openPopupAdd() {
   openPopup (popupFormAdd)
   inputText.value = '';
   inputPhoto.value = '';
-  saveButton.classList.add('popup__save_inactive');
   saveButton.setAttribute('disabled', 'disabled');
 }
 
@@ -65,7 +63,7 @@ function openPopupEdit() {
   inputHobby.value = profileHobby.textContent;
 }
 
-function formSubmitHandlerEdit (evt) {
+function HandlerEditformSubmit (evt) {
     evt.preventDefault();
     profileName.textContent = inputName.value;
     profileHobby.textContent = inputHobby.value;
@@ -103,7 +101,7 @@ function createCard (name, link) {
   return userElement;
 }
 
-function formSubmitHandlerAdd (evt) {
+function HandlerAddformSubmit (evt) {
   evt.preventDefault();
   const name = inputText.value;
   const link = inputPhoto.value;
@@ -119,13 +117,13 @@ function addInitialCards() {
   });
 }
 
-addButton.addEventListener('click', openPopupAdd);
+buttonAdd.addEventListener('click', openPopupAdd);
 closeButtonAdd.addEventListener('click', () => closePopup(popupFormAdd));
-inputFormAdd.addEventListener('submit', formSubmitHandlerAdd);
+inputFormAdd.addEventListener('submit', HandlerAddformSubmit);
 
-editButton.addEventListener('click', openPopupEdit);
+buttonEdit.addEventListener('click', openPopupEdit);
 closeButtonEdit.addEventListener('click', () => closePopup(popupFormEdit));
-inputFormEdit.addEventListener('submit', formSubmitHandlerEdit);
+inputFormEdit.addEventListener('submit', HandlerEditformSubmit);
 
 closeButtonPhoto.addEventListener('click', () => closePopup(popupFormPhoto));
 
