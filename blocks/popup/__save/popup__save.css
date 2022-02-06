@@ -1,7 +1,7 @@
 .popup__save {
     width: 358px;
     height: 50px;
-    background: #000000;
+    background-color: #000000;
     color: #FFFFFF;
     border-radius: 2px;
     border: none;
@@ -21,6 +21,13 @@
     opacity: .8;
 }
 
+/*.popup__save:disabled {
+    background: white;
+    border: 1px solid #000;
+    color: #000;
+    opacity: .2;
+}*/ 
+
 @media screen and (max-width: 767px) {
     .popup__save {
         width: 238px;
@@ -31,3 +38,4 @@
         margin-bottom: 25px;
     }
 }
+
