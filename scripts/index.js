@@ -51,18 +51,18 @@ function closePopup(formName) {
   document.removeEventListener('keydown', closeKeybordEscape);
 }
 
-function openPopupEdit() {
-  openPopup (popupFormEdit);
-  inputName.value = profileName.textContent;
-  inputHobby.value = profileHobby.textContent;
-}
-
 function openPopupAdd() {
   openPopup (popupFormAdd)
   inputText.value = '';
   inputPhoto.value = '';
   saveButton.classList.add('popup__save_inactive');
   saveButton.setAttribute('disabled', 'disabled');
+}
+
+function openPopupEdit() {
+  openPopup (popupFormEdit);
+  inputName.value = profileName.textContent;
+  inputHobby.value = profileHobby.textContent;
 }
 
 function formSubmitHandlerEdit (evt) {
