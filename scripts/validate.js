@@ -5,6 +5,7 @@ const configs = {
     inactiveButtonClass: 'popup__save_inactive',
     inputErrorClass: 'popup__input_error',
     errorClass: 'popup__error_activ'
+
 }
 
 const showInputError = (formElement, inputElement, errorMessage, configs) => {
@@ -47,15 +48,19 @@ const hasInvalidInput = (inputList) => {
     })
 }; 
 
-const toggleButtonState = (inputList, buttonElement, configs) => {
-    if (hasInvalidInput(inputList)) {
-       buttonElement.classList.add(configs.inactiveButtonClass);
-       buttonElement.setAttribute('disabled', 'disabled');
+function toggleButtonState(formElement, configs) {
+    const button = formElement.querySelector(configs.submitButtonSelector);
+    const FormValid = formElement.checkValidity();
+  
+    if (FormValid) {
+      button.classList.remove(configs.inactiveButtonClass);
+      button.removeAttribute('disabled');
     } else {
-       buttonElement.classList.remove(configs.inactiveButtonClass);
-       buttonElement.removeAttribute('disabled');
+      button.classList.add(configs.inactiveButtonClass);
+      button.setAttribute('disabled', true);
     }
-}; 
+  };
+
 
 const enableValidation = (configs) => {
     const formList = Array.from(document.querySelectorAll(configs.formSelector));

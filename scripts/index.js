@@ -30,16 +30,16 @@ const closeMausOverlay = (evt) => {
 }
 
 const closeKeybordEscape = (evt) => {
-	if(evt.key === 'Escape') {
-		closePopup(item);
+  if(evt.key === 'Escape') {
+		const item = document.querySelector('.popup_opened');
+    closePopup(item);
 	}
-  const item = document.querySelector('.popup_opened');
 }
 
 function openPopup(formName) {
   formName.classList.add('popup_opened');
 
-	document.addEventListener('mousedown', closeMausOverlay);
+  document.addEventListener('mousedown', closeMausOverlay);
   document.addEventListener('keydown', closeKeybordEscape);
 }
 
@@ -54,7 +54,7 @@ function openPopupAdd() {
   openPopup (popupFormAdd)
   inputText.value = '';
   inputPhoto.value = '';
-  saveButton.setAttribute('disabled', 'disabled');
+  toggleButtonState(formElement, configs);
 }
 
 function openPopupEdit() {
@@ -63,7 +63,7 @@ function openPopupEdit() {
   inputHobby.value = profileHobby.textContent;
 }
 
-function HandlerEditformSubmit (evt) {
+function handleEditFormSubmit (evt) {
     evt.preventDefault();
     profileName.textContent = inputName.value;
     profileHobby.textContent = inputHobby.value;
@@ -101,7 +101,7 @@ function createCard (name, link) {
   return userElement;
 }
 
-function HandlerAddformSubmit (evt) {
+function handleAddFormSubmit (evt) {
   evt.preventDefault();
   const name = inputText.value;
   const link = inputPhoto.value;
@@ -117,13 +117,18 @@ function addInitialCards() {
   });
 }
 
-buttonAdd.addEventListener('click', openPopupAdd);
+buttonAdd.addEventListener('click', () => {
+  openPopupAdd();
+  popupFormAdd.reset();
+  toggleButton(popupFormAdd, config);
+});
+
 closeButtonAdd.addEventListener('click', () => closePopup(popupFormAdd));
-inputFormAdd.addEventListener('submit', HandlerAddformSubmit);
+inputFormAdd.addEventListener('submit', handleAddFormSubmit);
 
 buttonEdit.addEventListener('click', openPopupEdit);
 closeButtonEdit.addEventListener('click', () => closePopup(popupFormEdit));
-inputFormEdit.addEventListener('submit', HandlerEditformSubmit);
+inputFormEdit.addEventListener('submit', handleEditFormSubmit);
 
 closeButtonPhoto.addEventListener('click', () => closePopup(popupFormPhoto));
 
