@@ -41,6 +41,7 @@ function openPopup(formName) {
 
   document.addEventListener('mousedown', closeMausOverlay);
   document.addEventListener('keydown', closeKeybordEscape);
+  toggleButtonState(formElement, configs);
 }
 
 function closePopup(formName) {
@@ -54,7 +55,7 @@ function openPopupAdd() {
   openPopup (popupFormAdd)
   inputText.value = '';
   inputPhoto.value = '';
-  toggleButtonState(formElement, configs);
+  toggleButton(popupFormAdd, configs);
 }
 
 function openPopupEdit() {

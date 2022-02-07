@@ -61,7 +61,6 @@ function toggleButtonState(formElement, configs) {
     }
   };
 
-
 const enableValidation = (configs) => {
     const formList = Array.from(document.querySelectorAll(configs.formSelector));
     formList.forEach((formElement) => {
