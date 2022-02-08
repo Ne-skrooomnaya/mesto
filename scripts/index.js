@@ -39,9 +39,8 @@ const closeKeybordEscape = (evt) => {
 function openPopup(formName) {
   formName.classList.add('popup_opened');
 
-  document.addEventListener('mousedown', closeMausOverlay);
+	document.addEventListener('mousedown', closeMausOverlay);
   document.addEventListener('keydown', closeKeybordEscape);
-  toggleButtonState(formElement, configs);
 }
 
 function closePopup(formName) {
@@ -55,13 +54,18 @@ function openPopupAdd() {
   openPopup (popupFormAdd)
   inputText.value = '';
   inputPhoto.value = '';
-  toggleButton(popupFormAdd, configs);
+  const buttonAdd = inputFormAdd.querySelector('.popup__save-add');
+  disable(buttonAdd, configs);
 }
 
 function openPopupEdit() {
   openPopup (popupFormEdit);
   inputName.value = profileName.textContent;
   inputHobby.value = profileHobby.textContent;
+
+  const buttonEdit = inputFormEdit.querySelector('.popup__save-edit');
+
+  disable(buttonEdit, configs);
 }
 
 function handleEditFormSubmit (evt) {
@@ -118,12 +122,7 @@ function addInitialCards() {
   });
 }
 
-buttonAdd.addEventListener('click', () => {
-  openPopupAdd();
-  popupFormAdd.reset();
-  toggleButton(popupFormAdd, config);
-});
-
+buttonAdd.addEventListener('click', openPopupAdd);
 closeButtonAdd.addEventListener('click', () => closePopup(popupFormAdd));
 inputFormAdd.addEventListener('submit', handleAddFormSubmit);
 
