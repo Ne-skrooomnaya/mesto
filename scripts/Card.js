@@ -1,10 +1,9 @@
-import { popupFormPhoto, openPopup } from "./index.js";
+import { openPopup, popupFormPhoto } from './Utils.js';
 
-
-export class Card {
-  constructor(data, cardSelector ) {//popupElement,
-    this._name = data._name
-    this._link = data._link
+class Card {
+  constructor(item, cardSelector ) {//popupElement,
+    this._name = item.name
+    this._link = item.link
     this._cardSelector = cardSelector;
     }
 
@@ -19,18 +18,16 @@ export class Card {
   }
 
   _likeCard = () => {
-        this._userElement.querySelector('.element__like').addEventListener('click', function(evt) {
-        evt.target.classList.toggle('element__like_active');
-        }); 
+    this._userElement.querySelector('.element__like').classList.toggle('element__like_active')
       }
 
   _deleteCard() {
     this._userElement.remove();
+    this._userElement = null;
   }
 
   _popupPhoto() {
     openPopup(popupFormPhoto);  
-      popupFormPhoto.querySelector('.popup__image').alt = this._name;
       popupFormPhoto.querySelector('.popup__image').src = this._link;
       popupFormPhoto.querySelector('.popup__photo-text').textContent = this._name;
   }
@@ -45,8 +42,8 @@ export class Card {
   });
 
   this._userElement.querySelector('.element__image').addEventListener('click', () => {
-      this._popupPhoto();
-  });
+    this._popupPhoto();
+});
   }
 
   createCard = () => {
@@ -61,11 +58,4 @@ export class Card {
   };
 }
 
-// const elementTemplate = '#template-element';
-
-// const card = new Card({ name: '', link: '' }, elementTemplate)
-
-// const cardElement = card.createCard()
-
-// list.prepend(cardElement)
-// .content.querySelector('.elements__grid')
+export default Card;
