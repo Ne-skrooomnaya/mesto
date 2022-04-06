@@ -13,7 +13,6 @@ export function removeMessageError (formName) {
 	});
 }
 
-
 export const closeMausOverlay = (evt) => {
 	const item = document.querySelector('.popup_opened');
 	if(evt.target === item) {
