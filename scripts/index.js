@@ -1,7 +1,7 @@
 import { initialCards, configs } from './config.js';
 import Card from './Card.js';
 import { FormValidator } from './FormValidator.js';
-import { closePopup, openPopup, popupFormPhoto } from './Utils.js';
+import { closePopup, openPopup, popupFormPhoto } from './utils.js';
 
 const buttonEdit = document.querySelector('.profile__edit-button');
 const profileName = document.querySelector('.profile__name');
