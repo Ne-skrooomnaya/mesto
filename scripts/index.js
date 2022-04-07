@@ -34,7 +34,6 @@ function openPopupEdit() {
 	openPopup (popupFormEdit);
 	inputName.value = profileName.textContent;
 	inputHobby.value = profileHobby.textContent;
-	
 }
 
 function openPopupAdd() {
@@ -60,7 +59,7 @@ function handleAddFormSubmit (evt) {
 	const cardData = {
     	name: inputText.value,
     	link: inputPhoto.value
-  }
+  	}
   	elementsGrid.prepend(createNewCard(cardData));
   	closePopup(popupFormAdd);
 }
@@ -68,7 +67,7 @@ function handleAddFormSubmit (evt) {
 function addInitialCards() {
   	initialCards.forEach((item) => {
   		elementsGrid.append(createNewCard(item));
-  });
+	});
 }
 
 const inputFormEditValidator = new FormValidator(configs, inputFormEdit);

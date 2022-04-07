@@ -21,12 +21,11 @@ export const closeMausOverlay = (evt) => {
 }
 
 export const closeKeybordEscape = (evt) => {
-  if(evt.key === 'Escape') {
+  	if(evt.key === 'Escape') {
 		const item = document.querySelector('.popup_opened');
     	closePopup(item);
 	}
 }
-
 
 export function closePopup(formName) {
 	formName.classList.remove('popup_opened');
@@ -35,7 +34,6 @@ export function closePopup(formName) {
 	removeInputError(formName);
 	removeMessageError(formName);
 }
-
 
 export function openPopup(formName) {
 	formName.classList.add('popup_opened');

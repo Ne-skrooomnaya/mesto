@@ -1,25 +1,25 @@
 import { openPopup, popupFormPhoto } from './Utils.js';
 
 class Card {
-  constructor(item, cardSelector ) {//popupElement,
+  constructor(item, cardSelector ) {
     this._name = item.name
     this._link = item.link
     this._cardSelector = cardSelector;
-    }
+  }
 
-    _getTemplate() {
-      const cardElement = document
-      .querySelector(this._cardSelector)
-      .content
-      .querySelector('.element')
-      .cloneNode(true);
-
-      return cardElement;
+  _getTemplate() {
+    const cardElement = document
+    .querySelector(this._cardSelector)
+    .content
+    .querySelector('.element')
+    .cloneNode(true);
+    
+    return cardElement;
   }
 
   _likeCard = () => {
     this._userElement.querySelector('.element__like').classList.toggle('element__like_active')
-      }
+  }
 
   _deleteCard() {
     this._userElement.remove();
@@ -35,15 +35,15 @@ class Card {
   _setEventListeners() {
     this._userElement.querySelector('.element__like').addEventListener('click', () => {
       this._likeCard();
-  });
+    });
 
-  this._userElement.querySelector('.element__delete').addEventListener('click', () => {
+    this._userElement.querySelector('.element__delete').addEventListener('click', () => {
       this._deleteCard();
-  });
+    });
 
-  this._userElement.querySelector('.element__image').addEventListener('click', () => {
-    this._handlePopupPhoto();
-});
+    this._userElement.querySelector('.element__image').addEventListener('click', () => {
+      this._handlePopupPhoto();
+    });
   }
 
   createCard = () => {
