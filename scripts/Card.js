@@ -26,10 +26,10 @@ class Card {
     this._userElement = null;
   }
 
-  _popupPhoto() {
+  _handlePopupPhoto() {
+    popupFormPhoto.querySelector('.popup__image').src = this._link;
+    popupFormPhoto.querySelector('.popup__photo-text').textContent = this._name;
     openPopup(popupFormPhoto);  
-      popupFormPhoto.querySelector('.popup__image').src = this._link;
-      popupFormPhoto.querySelector('.popup__photo-text').textContent = this._name;
   }
 
   _setEventListeners() {
@@ -42,7 +42,7 @@ class Card {
   });
 
   this._userElement.querySelector('.element__image').addEventListener('click', () => {
-    this._popupPhoto();
+    this._handlePopupPhoto();
 });
   }
 

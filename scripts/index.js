@@ -21,7 +21,7 @@ const inputText = popupFormAdd.querySelector('#popup__text');
 const inputPhoto = popupFormAdd.querySelector('#popup__photo');
 const saveButton = popupFormAdd.querySelector('.popup__save');
 
-const closeButtonPhoto = popupFormPhoto.querySelector('.popup__close');
+const buttonClosePhotoPopup = popupFormPhoto.querySelector('.popup__close');
 
 
 const elementTemplate = document.querySelector('#template-element').content;
@@ -38,9 +38,9 @@ function openPopupEdit() {
 }
 
 function openPopupAdd() {
-	openPopup (popupFormAdd);
 	document.querySelector('.popup__form-add').reset();
 	saveButton.setAttribute('disabled', 'disabled');
+	openPopup (popupFormAdd);
 }
 
 function handleEditFormSubmit (evt) {
@@ -87,8 +87,7 @@ buttonCloseEditProfilePopup.addEventListener('click', () =>
 closePopup(popupFormEdit));
 inputFormEdit.addEventListener('submit', handleEditFormSubmit);
 
-closeButtonPhoto.addEventListener('click', () => 
+buttonClosePhotoPopup.addEventListener('click', () => 
 closePopup(popupFormPhoto));
 
 addInitialCards();
-
