@@ -1,3 +1,4 @@
+console.log('Hello, World!')
 import { initialCards, configs } from './config.js';
 import Card from './Card.js';
 import { FormValidator } from './FormValidator.js';

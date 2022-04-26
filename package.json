@@ -1,0 +1,23 @@
+{
+  "name": "mesto",
+  "version": "0.0.1",
+  "description": "Проект о интересных местах в России.\r В проекте присутствуют интерактивные кнопки, ссылки.\r Сайт адаптивный.",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist && webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ne-skrooomnaya/mesto.git"
+  },
+  "author": "Faizullina Angelina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ne-skrooomnaya/mesto/issues"
+  },
+  "homepage": "https://github.com/Ne-skrooomnaya/mesto#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
