@@ -1,10 +1,11 @@
 import { popupFormPhoto, openPopup } from './utils.js';
 
-class Card {
-  constructor(item, cardSelector ) {
+export class Card {
+  constructor(item, cardSelector, {handleCardClick} ) {
     this._name = item.name
     this._link = item.link
     this._cardSelector = cardSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -44,6 +45,8 @@ class Card {
     this._userElement.querySelector('.element__image').addEventListener('click', () => {
       this._handlePopupPhoto();
     });
+
+    this._userElement.querySelector('.element__image').addEventListener('click', this._handleCardClick);
   }
 
   createCard = () => {
