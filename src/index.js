@@ -27,16 +27,16 @@ const popupFormAdd = document.querySelector('.popup-add');
 
 const inputText = popupFormAdd.querySelector('#popup__text');
 const inputPhoto = popupFormAdd.querySelector('#popup__photo');
-// const saveButton = popupFormAdd.querySelector('.popup__save');
+// // const saveButton = popupFormAdd.querySelector('.popup__save');
 
-// const buttonClosePhotoPopup = popupFormPhoto.querySelector('.popup__close');
+//  const buttonClosePhotoPopup = popupFormPhoto.querySelector('.popup__close');
 
 
 // const elementTemplate = document.querySelector('#template-element').content;
 // const elementsGrid = document.querySelector('.elements__grid');
 
-const inputFormEdit = popupFormEdit.querySelector('.popup__form-edit');
-const inputFormAdd = popupFormAdd.querySelector('.popup__form-add');
+// const inputFormEdit = popupFormEdit.querySelector('.popup__form-edit');
+// const inputFormAdd = popupFormAdd.querySelector('.popup__form-add');
 
 
 
