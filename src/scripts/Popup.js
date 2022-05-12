@@ -9,7 +9,7 @@ export default class Popup {
       }
     }
   
-    _overlayMausClose = (evt) => {
+    _closeMausOverlay = (evt) => {
       if(evt.target.classList.contains('popup')) {
         this.close();
       };
@@ -18,22 +18,59 @@ export default class Popup {
     open() {
       this._popupSelector.classList.add('popup_opened');
       document.addEventListener("keydown", this._handleEscClose);
-      window.addEventListener("mousedown", this._overlayMausClose);
+      window.addEventListener("mousedown", this._closeMausOverlay);
     }
   
     close() {
       this._popupSelector.classList.remove('popup_opened');
       document.removeEventListener("keydown", this._handleEscClose);
-      window.addEventListener("mousedown", this._overlayMausClose);
+      window.addEventListener("mousedown", this._closeMausOverlay);
     }
   
     
   
     setEventListeners() {
       this._popupSelector
-        .querySelector('.popup__close-button')
+        .querySelector('.popup__close')
         .addEventListener("click", () => {
           this.close();
         });
     }
   }
+
+
+
+
+
+
+
+
+
+  //     _closeMausOverlay = (evt) => {
+// 	const item = document.querySelector('.popup_opened');
+// 	if(evt.target === item) {
+// 		closePopup(item);
+// 	}
+// }
+
+//     _closeKeybordEscape = (evt) => {
+//   	if(evt.key === 'Escape') {
+// 		const item = document.querySelector('.popup_opened');
+//     	closePopup(item);
+// 	}
+// }
+
+
+// closePopup(formName) {
+// 	formName.classList.remove('popup_opened');
+// 	document.removeEventListener('mousedown', closeMausOverlay);
+// 	document.removeEventListener('keydown', closeKeybordEscape);
+// 	removeInputError(formName);
+// 	removeMessageError(formName);
+// }
+
+// openPopup(formName) {
+// 	formName.classList.add('popup_opened');
+// 	document.addEventListener('mousedown', closeMausOverlay);
+// 	document.addEventListener('keydown', closeKeybordEscape);
+// }

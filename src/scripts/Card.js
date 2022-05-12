@@ -1,4 +1,4 @@
-import { popupFormPhoto, openPopup } from './utils.js';
+import { popupFormPhoto} from './utils.js';
 
 export class Card {
   constructor(item, cardSelector, {handleCardClick} ) {
@@ -27,11 +27,11 @@ export class Card {
     this._userElement = null;
   }
 
-  _handlePopupPhoto() {
-    popupFormPhoto.querySelector('.popup__image').src = this._link;
-    popupFormPhoto.querySelector('.popup__photo-text').textContent = this._name;
-    openPopup(popupFormPhoto);  
-  }
+  // _handlePopupPhoto() {
+  //   popupFormPhoto.querySelector('.popup__image').src = this._link;
+  //   popupFormPhoto.querySelector('.popup__photo-text').textContent = this._name;
+  //   openPopup(popupFormPhoto);  
+  // }
 
   _setEventListeners() {
     this._userElement.querySelector('.element__like').addEventListener('click', () => {
@@ -42,9 +42,9 @@ export class Card {
       this._deleteCard();
     });
 
-    this._userElement.querySelector('.element__image').addEventListener('click', () => {
-      this._handlePopupPhoto();
-    });
+    // this._userElement.querySelector('.element__image').addEventListener('click', () => {
+    //   this._handlePopupPhoto();
+    // });
 
     this._userElement.querySelector('.element__image').addEventListener('click', this._handleCardClick);
   }

@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ангелина Файзуллина" />
-  <link rel="stylesheet" href="./pages/index.css" /> 
+<!--  эту строчку надо удалить. ты импортируешь стили в index.js -->
+<!--  <link rel="stylesheet" href="./pages/index.css" />-->
   <title>Место</title>
 </head>
 <body class="body">
@@ -45,7 +46,7 @@
           <span class="popup__error popup__hobby-error"></span>
           <button type="submit" class="popup__save popup__save-edit">Сохранить</button>
         </form>
-      </div> 
+      </div>
     </section>
     <section class="popup popup-add">
       <div class="popup__container popup__container_type_add">
@@ -58,11 +59,12 @@
           <span class="popup__error  popup__photo-error"></span>
           <button type="submit" class="popup__save popup__save-add">Создать</button>
         </form>
-      </div> 
+      </div>
     </section>
     <section class="popup popup-photo">
       <div class="popup__container popup__container_type_photo">
         <button type="button" class="popup__close popup__close-photo"></button>
+<!--        ### - это для чего? не понял -->
         <img src="###" alt="увеличенное фото места" class="popup__image">
         <h2 class="popup__photo-text"></h2>
       </div>
@@ -72,6 +74,7 @@
     <li class="element">
       <div class="element__container">
         <button type="button" class="element__delete"></button>
+<!--        аналогично. для чего в кавычках решетки? -->
         <img src="###" alt="фото этой местности" class="element__image">
         <div class="element__bottom">
           <h2 class="element__title"></h2>
@@ -80,6 +83,7 @@
       </div>
     </li>
   </template>
-  <script type="module" src="./index.js"></script>
+<!--  эта строчка тоже лишняя, скрипт подтягивается вебпаком -->
+<!--  <script type="module" src="./index.js"></script>-->
 </body>
 </html>
