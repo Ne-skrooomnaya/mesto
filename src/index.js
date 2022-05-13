@@ -2,7 +2,6 @@ import './pages/index.css';
 
 import { initialCards, configs } from './utils/config.js';
 import Card from './scripts/Card.js';
-import {popupFormPhoto} from './scripts/utils.js';
 import FormValidator from './scripts/FormValidator.js';
 import Section from './scripts/Section.js';
 import UserInfo from './scripts/UserInfo.js';
@@ -105,80 +104,3 @@ buttonAdd.addEventListener('click', () => {
 });
 
 addImageCard.setEventListeners();
-
-
-
-
-
-// export const popupFormPhoto = document.querySelector('.popup-image');
-
-
-// // теперь картинки можно импортировать,
-// // вебпак добавит в переменные правильные пути
-// const karachaevsk = new URL('./images/1karachaevsk.jpg', import.meta.url);
-// const gora = new URL('./images/2gora.png', import.meta.url);
-// const dombai = new URL('./images/3dombai.png', import.meta.url)
-// const gori = new URL('./images/4gori.png', import.meta.url);
-// const dombaii = new URL('./images/5dombai.png', import.meta.url);
-// // const karachaevski = new URL('./images/6karachaevski.png', import.meta.url);
-// // const karachaevsk = new URL('./images/1karachaevsk.jpg', import.meta.url);
-// // const karachaevsk = new URL('./images/1karachaevsk.jpg', import.meta.url);
-
-
-// const whoIsTheGoat = [
-//   // меняем исходные пути на переменные
-//   { name: '1karachaevsk', image: karachaevsk },
-//   { name: '2gora', link: gora },
-//   { name: '3dombai', link: dombai },
-//   { name: '4gori', link: gori },
-//   { name: '5dombai', link: dombaii },
-// //   { name: '6karachaevski', link: karachaevski },
-// //   { name: 'Kobe Bryant', link: bryantImage },
-// //   { name: 'Kobe Bryant', link: bryantImage },
-// ];
-
-// buttonClosePhotoPopup.addEventListener('click', () => 
-// closePopup(popupFormPhoto));
-
-// addInitialCards.addEventListener();
-
-// function handleAddFormSubmit (evt) {
-// 	evt.preventDefault();
-// 	const cardData = {
-//     	name: inputText.value,
-//     	link: inputPhoto.value
-//   	}
-//   	elementsGrid.prepend(createNewCard(cardData));
-//   	closePopup(popupFormAdd);
-// }
-
-// function addInitialCards() {
-//   	initialCards.forEach((item) => {
-//   		elementsGrid.append(createNewCard(item));
-// 	});
-// }
-
-
-
-
-
-
-
-// function openPopupEdit() {
-// 	openPopup (popupFormEdit);
-// 	inputName.value = profileName.textContent;
-// 	inputHobby.value = profileHobby.textContent;
-// }
-
-// function openPopupAdd() {
-// 	document.querySelector('.popup__form-add').reset();
-// 	saveButton.setAttribute('disabled', 'disabled');
-// 	openPopup (popupFormAdd);
-// }
-
-// function handleEditFormSubmit (evt) {
-//     evt.preventDefault();
-//     profileName.textContent = inputName.value;
-//     profileHobby.textContent = inputHobby.value;
-//     closePopup(popupFormEdit);
-// }

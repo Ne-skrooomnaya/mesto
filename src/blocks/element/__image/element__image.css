@@ -6,7 +6,7 @@
     border-radius: 10px 10px 0 0;
 }
 
-.element__photo:hover {
+.element__image:hover {
     transition: .3s;
     opacity: .6;
 }

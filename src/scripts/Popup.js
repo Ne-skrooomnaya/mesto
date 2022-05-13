@@ -38,39 +38,3 @@ export default class Popup {
     }
   }
 
-
-
-
-
-
-
-
-
-  //     _closeMausOverlay = (evt) => {
-// 	const item = document.querySelector('.popup_opened');
-// 	if(evt.target === item) {
-// 		closePopup(item);
-// 	}
-// }
-
-//     _closeKeybordEscape = (evt) => {
-//   	if(evt.key === 'Escape') {
-// 		const item = document.querySelector('.popup_opened');
-//     	closePopup(item);
-// 	}
-// }
-
-
-// closePopup(formName) {
-// 	formName.classList.remove('popup_opened');
-// 	document.removeEventListener('mousedown', closeMausOverlay);
-// 	document.removeEventListener('keydown', closeKeybordEscape);
-// 	removeInputError(formName);
-// 	removeMessageError(formName);
-// }
-
-// openPopup(formName) {
-// 	formName.classList.add('popup_opened');
-// 	document.addEventListener('mousedown', closeMausOverlay);
-// 	document.addEventListener('keydown', closeKeybordEscape);
-// }
