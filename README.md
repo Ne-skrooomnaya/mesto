@@ -5,6 +5,5 @@
 Сайт адаптивный.
 
 ## Ссылка
-https://ne-skrooomnaya.github.io/mesto
-
-//index.html
+https://ne-skrooomnaya.github.io/mesto//index.html
+https://github.com/ne-skrooomnaya/mesto
