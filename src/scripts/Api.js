@@ -1,7 +1,7 @@
 export default class Api {
   constructor({ baseUrl, headers }) {
-    this.url = baseUrl;
-    this.headers = headers;
+    this._baseUrl = baseUrl;
+    this._headers = headers;
 }
 
 _checkResponse(res) {
@@ -13,35 +13,35 @@ _checkResponse(res) {
   }
 
 getUserInfo() {
-  return fetch(`${this.url}/users/me`, {
-      headers: this.headers,
+  return fetch(`${this._baseUrl}/users/me`, {
+      headers: this._headers,
     })
   .then(this._checkResponse);
 }
 
 getInitialCards() {
-    return fetch(`${this.url}/cards`, {
-        headers: this.headers,
+    return fetch(`${this._baseUrl}/cards`, {
+        headers: this._headers,
       })
       .then(this._checkResponse);
 }
 
 patchUserInfo(item){
-    return fetch(`${this.url}/users/me`, {
+    return fetch(`${this._baseUrl}/users/me`, {
         method: 'PATCH',
-        headers: this.headers,
+        headers: this._headers,
         body: JSON.stringify({
             name: item.name,
-            about: item.profile
+            about: item.hobby
           })
       })
       .then(this._checkResponse);
 }
 
 patchUserAvatar(item){
-  return fetch(`${this.url}/users/me/avatar`, {
+  return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
-      headers: this.headers,
+      headers: this._headers,
       body: JSON.stringify({
           avatar: item.avatar
         })
@@ -50,11 +50,11 @@ patchUserAvatar(item){
 }
 
 postNewCard(item) {
-  return fetch(`${this.url}/cards`, {
+  return fetch(`${this._baseUrl}/cards`, {
     method: 'POST',
-    headers: this.headers,
+    headers: this._headers,
     body: JSON.stringify({
-      name: item.title,
+      name: item.text,
       link: item.photo
     }),
   })
@@ -62,25 +62,25 @@ postNewCard(item) {
 }
 
 deleteCard(id) {
-  return fetch(`${this.url}/cards/${id}`, {
+  return fetch(`${this._baseUrl}/cards/${id}`, {
     method: 'DELETE',
-    headers: this.headers
+    headers: this._headers
   })
   .then(this._checkResponse);
 }
 
 addLike(id) {
-  return fetch(`${this.url}/cards/${id}/likes`, {
+  return fetch(`${this._baseUrl}/cards/${id}/likes`, {
     method: 'PUT',
-    headers: this.headers
+    headers: this._headers
   })
   .then(this._checkResponse);
 }
 
 deleteLike(id) {
-  return fetch(`${this.url}/cards/${id}/likes`, {
+  return fetch(`${this._baseUrl}/cards/${id}/likes`, {
     method: 'DELETE',
-    headers: this.headers
+    headers: this._headers
   })
   .then(this._checkResponse);
 }
