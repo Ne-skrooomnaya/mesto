@@ -32,8 +32,11 @@ export const api = new Api({
   });
 
 // пользователь
-const userInfo = new UserInfo('.profile__name', '.profile__hobby', '.avatar__image');
-
+const userInfo = new UserInfo({
+	nameSelector: '.profile__name',
+	descriptionSelector: '.profile__hobby',
+	avatarSelector: '.avatar__image',
+  })
 let userId = null;
 
 //card
@@ -50,6 +53,7 @@ confirmPopup.setEventListeners();
 // 	const cardElement = card.createCard();
 // 	cardList.addItem(cardElement);
 // }
+
 
 const createNewCard = (data) => {
 	const card = new Card(
@@ -181,7 +185,7 @@ const formProfile = new PopupWithForm('.popup-edit',
 		formProfile.setLoadingMessage(true);
 		api.patchUserInfo(item)
 			.then(res => {
-				userInfo.setUserInfo(res.name, res.about);
+				userInfo.setUserInfo(res.userName, res.userDescription);
 				formProfile.close();
 			})
 			.catch((err) => {
@@ -198,14 +202,21 @@ formProfile.setEventListeners();
 
 
 buttonEdit.addEventListener('click', () => {
-//   console.log('formProfile.open();')
-	formProfile.open();
 	const user = userInfo.getUserInfo();
 	inputName.value = user.userName;
 	inputHobby.value = user.userDescription;
-	inputFormEditValidator.resetValidation();
+	toggleButtonState = this._toggleButtonState
+	inputFormEditValidator.toggleButtonState();
+	formProfile.open();
 });
 
+// buttonEditInfo.addEventListener('click', () => {
+// 	const userData = userInfo.getUserInfo();
+// 	nameInput.value = userData.userName;
+// 	jobInput.value = userData.userJob;
+// 	validateFormEdit.toggleButtonState();
+// 	formProfile.open();
+//   });
 
 //форма аватарки
 const formAvatar = new PopupWithForm('.popup-avatar',
