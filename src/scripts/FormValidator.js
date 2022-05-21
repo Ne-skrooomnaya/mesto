@@ -1,13 +1,16 @@
+import { configs } from "../utils/config";
+
 export class FormValidator {
   constructor(configs, form) {
-    this._form = form
-    this._configs = configs
-
     this._inputSelector = configs.inputSelector;
     this._submitButtonSelector = configs.submitButtonSelector;
     this._inputErrorClass = configs.inputErrorClass;
     this._errorClass = configs.errorClass;
   
+    this._form = form;
+    this._configs = configs;
+
+
     this._inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
     this._buttonElement = this._form.querySelector(this._submitButtonSelector);
   }
@@ -16,6 +19,7 @@ export class FormValidator {
     const errorElement = this._form.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add(this._inputErrorClass);
     errorElement.classList.add(this._errorClass);
+
     errorElement.textContent = errorMessage;
   };
     
@@ -23,6 +27,7 @@ export class FormValidator {
     const errorElement = this._form.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.remove(this._inputErrorClass);
     errorElement.classList.remove(this._errorClass);
+
     errorElement.textContent = '';
   };
     

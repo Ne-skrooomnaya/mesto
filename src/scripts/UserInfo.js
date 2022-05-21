@@ -3,7 +3,7 @@ export default class UserInfo {
     this._nameSelector = nameSelector;
     this._descriptionSelector = descriptionSelector;
     this._avatarSelector = avatarSelector;
-    this._userName = document.querySelector(avatarSelector);
+    this._userName = document.querySelector(nameSelector);
     this._userDescription = document.querySelector(descriptionSelector);
     this._userAvatar = document.querySelector(avatarSelector);
   

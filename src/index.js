@@ -17,8 +17,8 @@ const popupFormEdit = document.querySelector('.popup-edit');
 const popupFormAdd = document.querySelector('.popup-add');
 const popupAvatar = document.querySelector('.popup-avatar');
 
-const inputName = popupFormEdit.querySelector('popup__input_name');
-const inputHobby = popupFormEdit.querySelector('popup__input_hobby');
+const inputName = popupFormEdit.querySelector('.popup__input_name');
+const inputHobby = popupFormEdit.querySelector('.popup__input_hobby');
 // const inputText = popupFormAdd.querySelector('#popup__text');
 // const inputPhoto = popupFormAdd.querySelector('#popup__photo');
 
@@ -38,7 +38,7 @@ const userInfo = new UserInfo({
 	avatarSelector: '.avatar__image',
   })
 let userId = null;
-
+console.log(userInfo)
 //card
 
 const popupImage = new PopupWithImage('.popup-photo');
@@ -66,8 +66,8 @@ const createNewCard = (data) => {
 			confirmPopup.open();
 			confirmPopup.changeSubmitHandler(() => {
 				api.deleteCard(id)
-					.then(res => {
-						card.handleDeleteCard();
+					.then( res => {
+						card.handleDeleteCard(res.deleteCard);
 						confirmPopup.close();
 					})
 					.catch((err) => {
@@ -96,7 +96,7 @@ const createNewCard = (data) => {
 			}
 		}
 	);
-	return card.generateCard();
+	return card.createCard();
 }
 
 // const cardList = new Section({
@@ -159,6 +159,7 @@ const addImageCard = new PopupWithForm('.popup-add',
 
 addImageCard.setEventListeners();
 
+
 buttonAdd.addEventListener('click', () => {
 	addImageCard.open();
 	inputFormAddValidator.resetValidation();
@@ -185,7 +186,7 @@ const formProfile = new PopupWithForm('.popup-edit',
 		formProfile.setLoadingMessage(true);
 		api.patchUserInfo(item)
 			.then(res => {
-				userInfo.setUserInfo(res.userName, res.userDescription);
+				userInfo.setUserInfo(res.name, res.about);
 				formProfile.close();
 			})
 			.catch((err) => {
@@ -203,11 +204,10 @@ formProfile.setEventListeners();
 
 buttonEdit.addEventListener('click', () => {
 	const user = userInfo.getUserInfo();
+	formProfile.open();
 	inputName.value = user.userName;
 	inputHobby.value = user.userDescription;
-	toggleButtonState = this._toggleButtonState
-	inputFormEditValidator.toggleButtonState();
-	formProfile.open();
+	inputFormEditValidator.resetValidation();
 });
 
 // buttonEditInfo.addEventListener('click', () => {
@@ -247,13 +247,15 @@ buttonAvatar.addEventListener('click', () => {
 Promise.all([api.getInitialCards(), api.getUserInfo()])
   .then(([cards, user]) => {
 	userInfo.setUserInfo(user.name, user.about);
+	console.log(user.name);
+	console.log(user.about);
 	userInfo.setUserAvatar(user.avatar);
+	console.log(user.avatar);
 	userId = user._id;
 	cardList.renderItems(cards)
+	
 	})
   .catch(err => {
     console.log(`${err}`);
 });
-
-//
 

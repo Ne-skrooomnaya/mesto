@@ -10,7 +10,7 @@ export default class Popup {
     }
   
     _closeMausOverlay = (evt) => {
-      if(evt.target.classList.contains('popup')) {
+      if(evt.target.classList.contains('.popup')) {
         this.close();
       };
     }
