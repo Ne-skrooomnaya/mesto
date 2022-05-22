@@ -8,6 +8,7 @@ import UserInfo from './scripts/UserInfo.js';
 import PopupWithForm from './scripts/PopupWithForm.js';
 import PopupWithImage from './scripts/PopupWithImage.js';
 import Api from './scripts/Api';
+import DeleteCard from './scripts/DeleteCard';
 
 const buttonAdd = document.querySelector(".profile__add-button");
 const buttonEdit = document.querySelector('.profile__edit-button');
@@ -44,7 +45,7 @@ console.log(userInfo)
 const popupImage = new PopupWithImage('.popup-photo');
 popupImage.setEventListeners();
 
-const confirmPopup = new PopupWithForm('.popup-delete');
+const confirmPopup = new DeleteCard('.popup-delete');
 confirmPopup.setEventListeners();
 
 // const createNewCard = function(item) {
