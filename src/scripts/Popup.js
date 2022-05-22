@@ -24,6 +24,7 @@ export default class Popup {
     close() {
       this._popup.classList.remove('popup_opened');
       document.removeEventListener("keydown", this._handleEscClose);
+      window.removeEventListener("mousedown", this._closeMausOverlay);
     }
   
     
